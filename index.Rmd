@@ -1,0 +1,185 @@
+--- 
+title: "Glossary<br><a href='https://zenodo.org/badge/latestdoi/176944576'><img src='https://zenodo.org/badge/176944576.svg' alt='DOI:10.5281/zenodo.6619215'></a>"
+author: "psyTeachR Team" 
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+classoption: oneside # for PDFs
+geometry: margin=1in # for PDFs
+bibliography: [book.bib, packages.bib]
+csl: include/apa.csl
+link-citations: yes
+description: | 
+  Definitions of technical terms
+url: https://psyteachr.github.io/glossary
+github-repo: psyteachr/glossary
+cover-image: images/logos/logo.png
+apple-touch-icon: images/logos/apple-touch-icon.png
+apple-touch-icon-size: 180
+favicon: images/logos/favicon.ico
+---
+
+```{r cite-packages, include = FALSE}
+# automatically create a bib database for R packages
+# add any packages you want to cite here
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'tidyverse'
+), 'packages.bib')
+
+library(glossary)
+```
+
+# Overview {-}
+
+The glossary defines common jargon you might encounter while learning R. This specialised vocabulary can help you to communicate more efficiently about coding and statistics and to search for solutions to problems.
+
+The glossary was developed to link to the [PsyTeachR books](https://psyteachr.github.io/){target="_blank"}, but you can link to it from any resource. Suggest additions or changes at the [github issues page](https://github.com/PsyTeachR/glossary/issues){target="_blank"}.
+
+## Cite
+
+Contents are made available under a CC-BY-SA license. To cite:
+
+```{r, results='asis', echo = FALSE}
+cite <- citation(package = "glossary")
+print(cite, style = "text")
+```
+
+
+
+Thanks to the [glossary hackathon](https://docs.google.com/document/d/1FOohcEbWTAXB7OWSvMZzwMI3F--pNNRT3_3DSB6KeB8/edit) contributors: 
+[Jack Taylor](https://github.com/PsyTeachR/glossary/issues?q=is%3Aissue+author%3AJackEdTaylor), 
+[Juliane Kloidt](https://github.com/PsyTeachR/glossary/issues?q=is%3Aissue+author%3AJulianeKloidt), 
+[Jessica Hrudey](https://github.com/PsyTeachR/glossary/issues/created_by/jhrudey), 
+[James Bartlett](https://github.com/PsyTeachR/glossary/issues/created_by/BartlettJE), and 
+[Phil McAleer](https://github.com/PsyTeachR/glossary/issues/created_by/philmcaleer).
+
+
+## Offline Access
+
+You can download the glossary for offline access (although we update it frequently).
+
+``` r
+# install.packages("devtools")
+devtools::install_github("psyteachr/glossary")
+glossary::open_glossary() # open a local copy
+```
+
+
+
+## Using the glossary
+
+```{r, include = FALSE}
+reset_glossary()
+```
+
+You can use the glossary in your own R Markdown resources. The main function is `glossary()`. It has several arguments for controlling the display.
+
+
+* term: The glossary term to link to, can contain spaces
+
+    ```{verbatim, lang="md"}
+    The first `r glossary("argument")` is `term`.
+    ```
+    
+    The first `r glossary("argument")` is `term`.
+
+* display: The display (if different than the term)
+
+    ```{verbatim, lang="md"}
+    The `r glossary("dependent variable", "DV")` here is score.
+    ```
+    
+    The `r glossary("dependent variable", "DV")` here is score.
+
+* def: The short definition to display on hover and in the glossary table; if NULL, this will be looked up from https://psyteachr.github.io/glossary/; if "", there will be no tooltip on hover
+
+    ```{verbatim, lang="md"}
+    Here, we see a `r glossary("thingamabob", def = "Nobody knows what this is")`.
+    ```
+    
+    Here, we see a `r glossary("thingamabob", def = "Nobody knows what this is")`.
+
+* link: whether to include a link to the glossary when clicked
+
+    ```{verbatim, lang="md"}
+    Numbers are `r glossary("numeric", link = FALSE)`.
+    ```
+    
+    Numbers are `r glossary("numeric", link = FALSE)`.
+
+* show_def: whether to show the definition in text (instead of on hover)
+
+    ```{verbatim, lang="md"}
+    The `show_def` argument is `r glossary("logical", show_def = TRUE)`. 
+    
+    YAML: `r glossary("YAML", show_def = TRUE, link = FALSE)`
+    ```
+    
+    The `show_def` argument is `r glossary("logical", show_def = TRUE)`
+    
+    YAML: `r glossary("YAML", show_def = TRUE, link = FALSE)`
+
+* add_to_table: whether to add to the table created by glossary_table()
+
+    ```{verbatim, lang="md"}
+    PsyTeachR books use the `r glossary("tidyverse", add_to_table = FALSE)`.
+    ```
+    
+    PsyTeachR books use the `r glossary("tidyverse", add_to_table = FALSE)`.
+
+You can display a table of all previously defined words (except those exempted with `add_to_table = FALSE`) with the function `glossary_table()`.
+
+```{r}
+glossary_table()
+```
+
+Reset the glossary table between sections with `reset_glossary()`.
+
+```{r}
+reset_glossary()
+```
+
+
+
+
+# Symbols
+
+| Symbol | psyTeachR Term    | Also Known As     |
+|:------:|:------------------|:------------------|
+| ()     | (round) brackets  | parentheses       |
+| []     | square brackets   | brackets          |
+| {}     | curly brackets    | squiggly brackets |
+| <>     | chevrons          | angled brackets / guillemets |
+| <      | less than         |                   |
+| >      | greater than      |                   |
+| &      | ampersand         | "and" symbol      |
+| #      | hash              | pound / octothorpe|
+| /      | slash             | forward slash     |
+| \\     | backslash         |                   |
+| -      | dash              | hyphen / minus    |
+| _      | underscore        |                   |
+| *      | asterisk          | star              |
+| ^      | caret             | power symbol      |
+| ~      | tilde             | twiddle / squiggle|
+| =      | equal sign        |                   |
+| ==     | double equal sign |                   |
+| .      | full stop         | period / point    |
+| !      | exclamation mark  | bang / not        |
+| ?      | question mark     |                   |
+| '      | single quote      | quote / apostrophe|
+| "      | double quote      | quote             |
+| %>%    | pipe              | magrittr pipe     |
+| \|     | vertical bar      | pipe              |
+| ,      | comma             |                   |
+| ;      | semi-colon        |                   |
+| :      | colon             |                   |
+| @      | "at" symbol       | [various hilarious regional terms](https://www.theguardian.com/notesandqueries/query/0,5753,-1773,00.html){target="_blank"} |
+| ...    | [ellipsis](e.html#ellipsis)| dots     |
+
+```{r img-soundimals-hash, echo=FALSE, fig.cap="[Image by James Chapman/Soundimals](https://soundimals.tumblr.com/post/167354564886/chapmangamo-the-symbol-has-too-many-names){target='_blank'}"}
+
+knitr::include_graphics("images/soundimals_hash.png")
+
+```
+
+

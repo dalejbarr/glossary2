@@ -1,0 +1,16 @@
+## base R
+
+<div class="translation" lang="en">
+
+<dfn>The set of R [functions](f.html#function) that come with a basic installation of R, before you add external [packages](p.html#package).</dfn>
+
+Contrast with [tidyverse](t.html#tidyverse).
+
+</div>
+
+
+<div class="translation" lang="zh-Hant">
+
+<dfn>完成基本安裝，啟動R就自動載入的[函式庫](f.html#function)。自行安裝的外部[套件](p.html#package)，例如[tidyverse](t.html#tidyverse)，需要手動載入。</dfn>
+
+</div>

@@ -1,0 +1,12 @@
+## character
+
+<dfn>A [data type](d.html#data-type) representing [strings](s.html#string) of text.</dfn>
+
+Examples of character data are:
+
+```{r character-ex}
+"I am a string of characters"
+paste("The answer is ", 6+6)
+as.character(100)
+```
+

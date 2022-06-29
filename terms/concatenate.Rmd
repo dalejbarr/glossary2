@@ -1,0 +1,30 @@
+## concatenate
+
+<dfn>To combine strings or vectors.</dfn>
+
+When referring to strings, concatenate means to add strings together using the function `paste` (adds a space between strings) or `paste0` (doesn't add anything between strings). 
+
+```{r concatenate-demo1}
+subject_name <- "Lisa"
+paste("Hello,", subject_name)
+```
+
+When referring to other types of variables, concatenate can mean to create a vector with those variables, usually using the `c` function. For example, you could concatenate the numbers 1, 3, 6, and 10 like this: `c(1, 3, 6, 10)`. You can concatenate two [vectors](v.html#vector) as well:
+
+```{r concatenate-demo2}
+v1 <- 1:5
+v2 <- 11:15
+c(v1, v2)
+```
+
+::: {.warning}
+Remember, a [vector](v.html#vector) can only have one [data type](d.html#data_type). So if you concatenate a [string](s.html#string) vector and a [numeric](n.html#numeric) vector, the numbers will get turned into their string versions. If you concatenate an [integer](i.html#integer) and a [double](d.html#double) vector, the integers will be converted to doubles.
+:::
+
+```{r concatenate-demo3}
+strings <- c("a", "c", "e")
+integers <- c(1L, 3L, 5L)
+doubles <- c(1.1, 3.3, 5.5)
+c(strings, integers)
+c(doubles, integers)
+```

@@ -1,0 +1,26 @@
+## assignment operator
+
+<dfn>The [symbol](symbols.html) `<-`, which functions like `=` and assigns the value on the right to the object on the left</dfn>
+
+```{r assignment-operator}
+a <- 1
+
+a
+```
+
+The assignment operator can also be reversed
+
+```{r reversed-assignment-operator}
+2 -> b
+
+b
+```
+
+And even go in both direction at the same time!
+
+```{r dual-assignment}
+x <- 2 -> y
+
+x
+y
+```
